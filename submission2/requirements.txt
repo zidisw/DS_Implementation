@@ -9,3 +9,5 @@ seaborn==0.13.2
 SQLAlchemy==2.0.41
 streamlit==1.45.1
 xgboost==3.0.1
+supabase
+psycopg2-binary
