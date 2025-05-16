@@ -23,7 +23,7 @@ Proyek ini mencakup pengembangan solusi berbasis data untuk mengatasi permasalah
 ### Persiapan
 
 **Sumber data:**  
-Dataset kinerja siswa yang disediakan oleh Jaya Jaya Institut, dapat diunduh melalui tautan: [students' performance](https://example.com/students-performance.csv). Data mencakup informasi seperti status siswa (Dropout, Enrolled, Graduate), unit mata kuliah, biaya kuliah, usia pendaftaran, dan faktor ekonomi.
+Dataset kinerja siswa yang disediakan oleh Jaya Jaya Institut, dapat diunduh melalui tautan: [students' performance](https://github.com/dicodingacademy/dicoding_dataset/tree/main/students_performance). Data mencakup informasi seperti status siswa (Dropout, Enrolled, Graduate), unit mata kuliah, biaya kuliah, usia pendaftaran, dan faktor ekonomi.
 
 **Setup Environment:**  
 
@@ -55,7 +55,7 @@ Dataset kinerja siswa yang disediakan oleh Jaya Jaya Institut, dapat diunduh mel
     ```
 
 5. **Pastikan file data tersedia**  
-    Simpan file dataset (`students-performance.csv`) di folder proyek.
+    Simpan file dataset (`data.csv`) di folder proyek.
 
 ---
 
@@ -71,7 +71,7 @@ Dashboard yang telah dibuat memberikan gambaran komprehensif tentang performa si
 
 Dashboard ini dapat diakses melalui docker atau melihat langsung melalui hasil screenshot dashboard
 
-- **Kredensial Akses:**
+- **Kredensial Akses Metabase:**
   - Email: [zidirsyadin@gmail.com]
   - Password: [accbang123]
 
@@ -84,28 +84,28 @@ Prototipe sistem machine learning menggunakan model XGBoost untuk memprediksi st
 **Langkah menjalankan prototipe:**
 
 1. Pastikan environment telah diatur dan dependensi terinstal (lihat bagian Persiapan).
-2. Muat dataset menggunakan perintah:
+2. Jalankan aplikasi Streamlit secara lokal dengan perintah berikut di terminal:
 
-    ```python
-    import pandas as pd
-    df = pd.read_csv('students-performance.csv', sep=';')
+    ```bash
+    streamlit run app.py
     ```
-3. Jalankan skrip pelatihan model dan evaluasi yang tersedia dalam notebook Jupyter.
-4. Gunakan model tersimpan (`best_model_xgboost.joblib`) untuk prediksi baru:
-    ```python
-    import joblib
-    loaded_model = joblib.load('best_model_xgboost.joblib')
-    ```
-Prototipe dapat diakses dan diuji melalui [link prototipe](https://example.com/ml-prototype-jaya-jaya).
+
+3. Pastikan file dataset (`data.csv`) dan model (`best_model_xgboost.joblib`) sudah tersedia di folder proyek.
+4. Akses aplikasi melalui browser di alamat yang ditampilkan (biasanya http://localhost:8501).
+5. Pindah ke tab Prediksi Resiko Dropout, lalu masukkan inputan yang dibutuhkan, lalu scroll ke bawah hingga ketemu buttin Prediksi. Setelah itu tunggu beberapa saat dan hasil prediksinya akan keluar.
+
+Prototipe dapat diakses dan diuji melalui [link prototipe](hhttps://jjistudentperformancezidpunya.streamlit.app/).
 
 ---
 
 ## Conclusion
+
 Proyek ini berhasil mengidentifikasi pola dropout melalui analisis data dan dashboard interaktif, serta mengembangkan model prediktif dengan akurasi 76,2% untuk mendeteksi siswa berisiko. Meskipun model menunjukkan performa baik pada kelas mayoritas (Graduate), sensitivitas terhadap kelas Dropout dan Enrolled masih perlu ditingkatkan. Dengan implementasi rekomendasi aksi, Jaya Jaya Institut dapat mengurangi tingkat dropout, meningkatkan retensi siswa, dan mendukung keberhasilan akademik secara keseluruhan.
 
 ---
 
 ### Rekomendasi Action Items
+
 Beberapa rekomendasi action items yang dapat dilakukan perusahaan untuk menyelesaikan permasalahan dan mencapai target:
 
 1. **Identifikasi Dini Siswa Berisiko Dropout**  
@@ -123,7 +123,6 @@ Beberapa rekomendasi action items yang dapat dilakukan perusahaan untuk menyeles
 
 4. **Intervensi Berbasis Demografi**  
     - Dukung siswa usia 30-45 tahun dengan opsi kuliah malam atau daring, serta program orientasi khusus.  
-    - Selidiki alasan tingginya dropout pada siswa laki-laki dan buat program pendukung seperti mentoring khusus.
 
 5. **Manfaatkan Dashboard untuk Pemantauan**  
     - Perbarui dashboard secara berkala untuk memantau tren dropout dan performa siswa.  
